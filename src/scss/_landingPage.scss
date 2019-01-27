@@ -1,69 +1,87 @@
 .headerContainer {
-    @media only screen and (min-width: 700px) {
-        display: flex;
-        nav.menu ul {
-            position: static;
-        }
-    }
-    ul {
-        display: flex;
-        color: #fff;
-    }
-    .logoContainer {
+    @media only screen and (max-width: 699px) {
         border-bottom: 1px solid $colorMain;
-        flex-grow: 1;
-        >div {
+    }
+    // @media only screen and (min-width: 700px) {
+    //     background: linear-gradient( to right, #fff 0%, #fff 50%, $colorMain 50%, $colorMain 100%);
+    // }
+    >div.mainContainer {
+        @media only screen and (min-width: 700px) {
             display: flex;
-            align-items: center;
-            height: 100%;
-            .fa-bars {
-                margin: 0 15px 0 15px;
+            nav.menu ul {
+                position: static;
             }
-            .fa-user-cog {
-                margin-right: 15px;
+        }
+        ul {
+            // color: #fff;
+            li {
+                cursor: pointer;
+                // font-weight: 700;
+                &:hover {
+                    // color: $colorMain;
+                    background-color: $colorBgLight;
+                }
             }
-            .logo {
-                padding: 5px 15px;
-                flex-grow: 1;
-                position: relative;
-                @media only screen and (max-width: 699px) {
-                    &:before {
-                        content: '';
-                        height: 30px;
-                        width: 1px;
-                        background-color: $colorMain;
-                        position: absolute;
-                        top: 7px;
-                        left: 0;
+        }
+        .logoContainer {
+            flex-grow: 1;
+            >div {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                .fa-bars {
+                    margin: 0 15px 0 15px;
+                }
+                .fa-user-cog {
+                    margin-right: 15px;
+                }
+                .logo {
+                    font-family: 'Amatic SC', cursive;
+                    font-weight: 700;
+                    // min-width: 250px;
+                    padding: 5px 15px;
+                    flex-grow: 1;
+                    position: relative;
+                    @media only screen and (max-width: 699px) {
+                        &:before {
+                            content: '';
+                            height: 40px;
+                            width: 1px;
+                            background-color: $colorMain;
+                            position: absolute;
+                            top: 10px;
+                            left: 0;
+                        }
+                    }
+                }
+                @media only screen and (min-width: 700px) {
+                    // background-image: linear-gradient(to right, #fff 0%, #fff 30%, $colorMain 100%);
+                    svg {
+                        display: none;
                     }
                 }
             }
-            @media only screen and (min-width: 700px) {
-                svg {
-                    display: none;
+        }
+        nav {
+            ul {
+                flex-direction: column;
+                // background-color: $colorMain;
+                position: absolute;
+                width: 100%;
+                li {
+                    padding: 10px 15px;
+                }
+                &:first-of-type {
+                    text-align: right;
                 }
             }
-        }
-    }
-    nav {
-        ul {
-            flex-direction: column;
-            background-color: $colorBgDark;
-            position: absolute;
-            width: 100%;
-            li {
-                padding: 10px 15px;
-            }
-            &:first-of-type {
-                text-align: right;
-            }
-        }
-        @media only screen and (min-width: 700px) {
-            ul {
-                display: flex;
-                flex-direction: row;
-                &:first-of-type {
-                    justify-content: flex-end;
+            @media only screen and (min-width: 700px) {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    &:first-of-type {
+                        justify-content: flex-end;
+                    }
                 }
             }
         }
@@ -71,5 +89,34 @@
 }
 
 .ctaContainer {
-    background-color: $colorBgLight;
+    // background-color: $colorBgLight;
+    .mainContainer>div {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+        &:last-of-type {
+            flex-direction: column;
+        }
+        h2 {
+            text-align: center;
+        }
+        .image {
+            height: 150px;
+            width: 180px;
+            background: url('../images/header\ cut.png') left no-repeat;
+            background-size: contain;
+            @media only screen and (min-width: 700px) {
+                height: 600px;
+                width: 720px;
+            }
+        }
+        .decoration {
+            height: 25px;
+            width: 360px;
+            background: url('../images/decoration.png') center no-repeat;
+            background-size: contain;
+            margin-top: 15px;
+        }
+    }
 }

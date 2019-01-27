@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route, Link, NavLink} from 'react-router-dom';
+import { HashRouter, Switch, Route, Link, NavLink } from 'react-router-dom';
 import LandingPage from './LandingPage';
 
 class App extends React.Component {

@@ -1,19 +1,23 @@
 @import '_reset.scss';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
 @import '_variables.scss';
 @import '_animations.scss';
 @import '_landingPage.scss';
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: $fontSizeMain;
+    // background-image: url('../images/crissxcross.png');
     .mainContainer {
+        // width: 80%;
+        // min-width: 300px;
+        margin: 0 auto;
         @media only screen and (min-width: 1200px) {
             max-width: 1200px;
-            margin: 0 auto;
         }
     }
     h1 {
-        font-size: $fontSizeLarge;
+        font-size: $fontSizeLogo;
     }
     h2 {
         font-size: $fontSizeMedium;
@@ -22,8 +26,7 @@ body {
         display: none;
     }
     .slideInRight {
-        animation: slide-in-right .3s ease-out;
-        // -webkit-animation: slide-down .3s ease-out;
+        animation: slide-in-right .3s ease-out; // -webkit-animation: slide-down .3s ease-out;
         // -moz-animation: slide-down .3s ease-out;
     }
     .slideOutLeft {

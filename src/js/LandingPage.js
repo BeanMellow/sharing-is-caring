@@ -9,7 +9,8 @@ const Logo = props => {
             {/* <div className='mainContainer'> */}
             <div>
                 <FontAwesomeIcon icon={faBars} onClick={props.toggleMenu('navMenu')} />
-                <h1 className='logo'>SharingIsCaring</h1>
+                {/* <h1 className='logo'>SharingIsCaring</h1> */}
+                <h1 className='logo'>Caring By Sharing</h1>
                 <FontAwesomeIcon icon={faUserCog} onClick={props.toggleMenu('userMenu')} />
             </div>
         </div>
@@ -18,22 +19,19 @@ const Logo = props => {
 
 const Navigation = props => {
     return (
-        <div>
-            {/* <nav className='mainContainer'> */}
-            <nav className='menu'>
-                <ul className={props.state.userMenu}>
-                    <li>Log in</li>
-                    <li>Sign up</li>
-                </ul>
-                <ul className={props.state.navMenu}>
-                    <li>Start</li>
-                    <li>Our idea</li>
-                    <li>About us</li>
-                    <li>Organizations</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-        </div>
+        <nav className='menu'>
+            <ul className={props.state.userMenu}>
+                <li>Log in</li>
+                <li>Sign up</li>
+            </ul>
+            <ul className={props.state.navMenu}>
+                <li>Start</li>
+                <li>Our idea</li>
+                <li>About us</li>
+                <li>Organizations</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
     );
 }
 
@@ -58,12 +56,14 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className='headerContainer mainContainer'>
-                <Logo
-                    username={this.state.username}
-                    toggleMenu={this.toggleMenu}
-                />
-                <Navigation state={this.state} />
+            <div className='headerContainer'>
+                <div className='mainContainer'>
+                    <Logo
+                        username={this.state.username}
+                        toggleMenu={this.toggleMenu}
+                    />
+                    <Navigation state={this.state} />
+                </div>
             </div>
         );
     }
@@ -72,9 +72,14 @@ class Header extends React.Component {
 const CallToAction = () => (
     <div className='ctaContainer'>
         <div className='mainContainer'>
-            <h2>Start helping today!</h2>
-            <div className='decoration'></div>
-            <h2>Give away stuff you no longer use to those who actually need it.</h2>
+            <div>
+                <div className='image'></div>
+                <h2>Start helping today!</h2>
+            </div>
+            <div>
+                <h2>Give away stuff you no longer use to those who actually need it.</h2>
+                <div className='decoration'></div>
+            </div>
         </div>
     </div>
 );
