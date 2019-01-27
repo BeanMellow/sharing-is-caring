@@ -1,11 +1,15 @@
 import React from 'react';
+import { HashRouter, Switch, Route, Link, NavLink} from 'react-router-dom';
+import LandingPage from './LandingPage';
 
 class App extends React.Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <HashRouter>
+                <Switch>
+                    <Route exact path='/' component={LandingPage} />
+                </Switch>
+            </HashRouter>
         );
     }
 }

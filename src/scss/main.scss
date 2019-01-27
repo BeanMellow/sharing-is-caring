@@ -1,0 +1,35 @@
+@import '_reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import '_variables.scss';
+@import '_animations.scss';
+@import '_landingPage.scss';
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $fontSizeMain;
+    .mainContainer {
+        @media only screen and (min-width: 1200px) {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+    h1 {
+        font-size: $fontSizeLarge;
+    }
+    h2 {
+        font-size: $fontSizeMedium;
+    }
+    .hidden {
+        display: none;
+    }
+    .slideInRight {
+        animation: slide-in-right .3s ease-out;
+        // -webkit-animation: slide-down .3s ease-out;
+        // -moz-animation: slide-down .3s ease-out;
+    }
+    .slideOutLeft {
+        animation: slide-out-left .3s ease-out;
+    }
+    .slideInLeft {
+        animation: slide-in-left .3s ease-out;
+    }
+}

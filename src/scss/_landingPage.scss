@@ -1,0 +1,75 @@
+.headerContainer {
+    @media only screen and (min-width: 700px) {
+        display: flex;
+        nav.menu ul {
+            position: static;
+        }
+    }
+    ul {
+        display: flex;
+        color: #fff;
+    }
+    .logoContainer {
+        border-bottom: 1px solid $colorMain;
+        flex-grow: 1;
+        >div {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .fa-bars {
+                margin: 0 15px 0 15px;
+            }
+            .fa-user-cog {
+                margin-right: 15px;
+            }
+            .logo {
+                padding: 5px 15px;
+                flex-grow: 1;
+                position: relative;
+                @media only screen and (max-width: 699px) {
+                    &:before {
+                        content: '';
+                        height: 30px;
+                        width: 1px;
+                        background-color: $colorMain;
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                    }
+                }
+            }
+            @media only screen and (min-width: 700px) {
+                svg {
+                    display: none;
+                }
+            }
+        }
+    }
+    nav {
+        ul {
+            flex-direction: column;
+            background-color: $colorBgDark;
+            position: absolute;
+            width: 100%;
+            li {
+                padding: 10px 15px;
+            }
+            &:first-of-type {
+                text-align: right;
+            }
+        }
+        @media only screen and (min-width: 700px) {
+            ul {
+                display: flex;
+                flex-direction: row;
+                &:first-of-type {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+.ctaContainer {
+    background-color: $colorBgLight;
+}
