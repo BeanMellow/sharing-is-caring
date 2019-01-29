@@ -72,11 +72,9 @@ class Header extends React.Component {
 const CallToAction = () => (
     <div className='ctaContainer'>
         <div className='mainContainer'>
+            <div className='image'></div>
             <div>
-                <div className='image'></div>
                 <h2>Start helping today!</h2>
-            </div>
-            <div>
                 <h2>Give away stuff you no longer use to those who actually need it.</h2>
                 <div className='decoration'></div>
             </div>

@@ -1,48 +1,36 @@
 .headerContainer {
-    @media only screen and (max-width: 699px) {
+    @include bp(max-tablet) {
         border-bottom: 1px solid $colorMain;
     }
-    // @media only screen and (min-width: 700px) {
-    //     background: linear-gradient( to right, #fff 0%, #fff 50%, $colorMain 50%, $colorMain 100%);
-    // }
     >div.mainContainer {
-        @media only screen and (min-width: 700px) {
+        @include bp(min-phablet) {
             display: flex;
-            nav.menu ul {
-                position: static;
-            }
-        }
-        ul {
-            // color: #fff;
-            li {
-                cursor: pointer;
-                // font-weight: 700;
-                &:hover {
-                    // color: $colorMain;
-                    background-color: $colorBgLight;
-                }
-            }
+            align-items: center;
         }
         .logoContainer {
             flex-grow: 1;
             >div {
                 display: flex;
                 align-items: center;
-                height: 100%;
                 .fa-bars {
                     margin: 0 15px 0 15px;
+                    @include bp(min-tablet) {
+                        display: none;
+                    }
                 }
                 .fa-user-cog {
                     margin-right: 15px;
+                    @include bp(min-phablet) {
+                        display: none;
+                    }
                 }
                 .logo {
                     font-family: 'Amatic SC', cursive;
                     font-weight: 700;
-                    // min-width: 250px;
                     padding: 5px 15px;
                     flex-grow: 1;
                     position: relative;
-                    @media only screen and (max-width: 699px) {
+                    @include bp(max-tablet) {
                         &:before {
                             content: '';
                             height: 40px;
@@ -54,69 +42,78 @@
                         }
                     }
                 }
-                @media only screen and (min-width: 700px) {
-                    // background-image: linear-gradient(to right, #fff 0%, #fff 30%, $colorMain 100%);
-                    svg {
-                        display: none;
-                    }
-                }
             }
         }
-        nav {
-            ul {
-                flex-direction: column;
-                // background-color: $colorMain;
-                position: absolute;
-                width: 100%;
-                li {
-                    padding: 10px 15px;
-                }
-                &:first-of-type {
-                    text-align: right;
+        nav ul {
+            // background-color: $colorMain;
+            background-color: #fff;
+            position: absolute;
+            width: 100%;
+            li {
+                padding: 10px 15px;
+                cursor: pointer;
+                &:hover {
+                    // color: $colorMain;
+                    background-color: $colorBgLight;
                 }
             }
-            @media only screen and (min-width: 700px) {
-                ul {
+            &:first-of-type {
+                text-align: right;
+                @include bp(min-phablet) {
+                    position: static;
                     display: flex;
-                    flex-direction: row;
-                    &:first-of-type {
-                        justify-content: flex-end;
-                    }
+                    justify-content: flex-end;
+                }
+            }
+            &:last-of-type {
+                left: 0;
+                @include bp(min-tablet) {
+                    position: static;
+                    display: flex;
                 }
             }
         }
     }
 }
 
+// TODO: START CLEANING HERE
 .ctaContainer {
     // background-color: $colorBgLight;
-    .mainContainer>div {
+    .mainContainer {
         background-color: #fff;
         display: flex;
         align-items: center;
-        padding-top: 15px;
-        &:last-of-type {
-            flex-direction: column;
+        justify-content: center;
+        .image {
+            display: none;
+            @include bp(min-tablet) {
+                display: block;
+                height: 600px;
+                width: 100%;
+                background-image: url('../images/headerThis.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+        div:last-of-type {
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
         }
         h2 {
             text-align: center;
         }
-        .image {
-            height: 150px;
-            width: 180px;
-            background: url('../images/header\ cut.png') left no-repeat;
-            background-size: contain;
-            @media only screen and (min-width: 700px) {
-                height: 600px;
-                width: 720px;
-            }
-        }
         .decoration {
-            height: 25px;
-            width: 360px;
-            background: url('../images/decoration.png') center no-repeat;
+            height: 20px;
+            width: 100%; // background: url('../images/decoration.png') center no-repeat;
+            background: url('../images/decoration.png');
+            background-position: center;
             background-size: contain;
+            background-repeat: no-repeat;
             margin-top: 15px;
+            @include bp(min-tablet) {
+                height: 30px;
+            }
         }
     }
 }

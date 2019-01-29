@@ -1,0 +1,22 @@
+@mixin bp($point) {
+    @if $point==max-phablet {
+        @media only screen and (max-width: 499px) {
+            @content;
+        }
+    }
+    @else if $point==min-phablet {
+        @media only screen and (min-width: 500px) {
+            @content;
+        }
+    }
+    @if $point==max-tablet {
+        @media only screen and (max-width: 749px) {
+            @content;
+        }
+    }
+    @else if $point==min-tablet {
+        @media only screen and (min-width: 750px) {
+            @content;
+        }
+    }
+}
