@@ -7,6 +7,9 @@
             display: flex;
             align-items: center;
         }
+        @include bp(min-tablet) {
+            padding: 5px 5px 0 5px;
+        }
         .logoContainer {
             flex-grow: 1;
             >div {
@@ -49,9 +52,8 @@
             background-color: #fff;
             position: absolute;
             width: 100%;
-            li {
+            li a {
                 padding: 10px 15px;
-                cursor: pointer;
                 &:hover {
                     // color: $colorMain;
                     background-color: $colorBgLight;
@@ -93,6 +95,7 @@
                 background-image: url('../images/headerThis.png');
                 background-size: contain;
                 background-repeat: no-repeat;
+                background-position: left center;
             }
         }
         div:last-of-type {
